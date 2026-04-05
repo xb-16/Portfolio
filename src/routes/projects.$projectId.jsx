@@ -31,7 +31,7 @@ function ProjectPage() {
           className="mb-8 inline-flex items-center gap-2 rounded-lg border border-[var(--line)] bg-[var(--surface)] px-4 py-2 text-[var(--sea-ink)] transition-all hover:border-[var(--lagoon)] hover:bg-[var(--lagoon)]/10 hover:shadow-md"
         >
           <ArrowLeft className="h-4 w-4" />
-          Back to Projects
+          Back
         </Link>
 
         {/* Header */}
