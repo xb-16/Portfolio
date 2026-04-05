@@ -145,7 +145,7 @@ function Header() {
     /* @__PURE__ */ jsx(ThemeToggle, {})
   ] }) });
 }
-const appCss = "/assets/styles-CZ74ElHt.css";
+const appCss = "/Portfolio/assets/styles-DqY8s1YG.css";
 const THEME_INIT_SCRIPT = `(function(){try{var stored=window.localStorage.getItem('theme');var mode=(stored==='light'||stored==='dark'||stored==='auto')?stored:'auto';var prefersDark=window.matchMedia('(prefers-color-scheme: dark)').matches;var resolved=mode==='auto'?(prefersDark?'dark':'light'):mode;var root=document.documentElement;root.classList.remove('light','dark');root.classList.add(resolved);if(mode==='auto'){root.removeAttribute('data-theme')}else{root.setAttribute('data-theme',mode)}root.style.colorScheme=resolved;}catch(e){}})();`;
 const Route$7 = createRootRoute({
   head: () => ({
@@ -172,7 +172,7 @@ function RootDocument() {
     ] }) })
   ] });
 }
-const $$splitComponentImporter$6 = () => import("./index-DDq7flVd.js");
+const $$splitComponentImporter$6 = () => import("./index-Byoex9eN.js");
 const Route$6 = createFileRoute("/")({
   component: lazyRouteComponent($$splitComponentImporter$6, "component")
 });
@@ -535,7 +535,7 @@ function Projects() {
     project.id
   )) }) });
 }
-const $$splitComponentImporter$2 = () => import("./projects._projectId-44s0vKjN.js");
+const $$splitComponentImporter$2 = () => import("./projects._projectId-DHb1c3uZ.js");
 const Route$2 = createFileRoute("/projects/$projectId")({
   loader: ({
     params

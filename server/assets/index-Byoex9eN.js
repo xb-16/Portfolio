@@ -1,7 +1,7 @@
 import { jsxs, jsx } from "react/jsx-runtime";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { S as SectionLayout, P as Projects } from "./router-BFJWu7m5.js";
+import { S as SectionLayout, P as Projects } from "./router-CFRvSa4V.js";
 import { GraduationCap, MapPin, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import "class-variance-authority";

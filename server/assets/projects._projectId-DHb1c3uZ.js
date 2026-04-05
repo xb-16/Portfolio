@@ -1,7 +1,7 @@
 import { jsx, jsxs } from "react/jsx-runtime";
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, Github, ExternalLink, Code2 } from "lucide-react";
-import { R as Route } from "./router-BFJWu7m5.js";
+import { R as Route } from "./router-CFRvSa4V.js";
 import "react";
 import "class-variance-authority";
 import "radix-ui";
