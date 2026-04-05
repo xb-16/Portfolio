@@ -1,5 +1,5 @@
 import { SectionLayout } from '../SectionLayout';
-import { ArrowRight, MapPin, Calendar } from 'lucide-react';
+import { MapPin, Calendar, ArrowUpRight } from 'lucide-react';
 import { Link } from '@tanstack/react-router';
 
 const experiences = [
@@ -9,7 +9,7 @@ const experiences = [
     location: 'Laayoune',
     duration: '2 Months, 2025',
     description:
-    'Redesigned legacy website with a modern, elegant UI using Vue.js, enhancing visual appeal and user experience. Integrated i18n for full internationalization support.',
+      'Redesigned legacy website with a modern, elegant UI using Vue.js, enhancing visual appeal and user experience. Integrated i18n for full internationalization support.',
     path: '/works-internships/sahariano',
   },
   {
@@ -35,36 +35,37 @@ const experiences = [
 export function Work() {
   return (
     <SectionLayout title="Work & Internships" stack>
-      <div className="space-y-6">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {experiences.map((exp) => (
           <Link
             key={exp.id}
             to={exp.path}
-            className="group block rounded-xl border border-[var(--line)] bg-[var(--surface)] p-6 transition-all duration-200 hover:border-[var(--lagoon)]/50 hover:shadow-lg hover:scale-[1.01]"
+            className="group relative rounded-xl border border-[var(--line)] bg-white/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[var(--lagoon)]/30 hover:shadow-lg hover:shadow-[var(--lagoon)]/5 dark:bg-black/20"
           >
-            <div className="flex items-start justify-between">
-              <div className="flex-1">
-                <h3 className="text-xl font-semibold text-[var(--sea-ink)] group-hover:text-[var(--lagoon-deep)] transition-colors">
-                  {exp.title}
-                </h3>
-                <div className="mt-2 flex flex-wrap gap-4 text-sm text-[var(--sea-ink-soft)]">
-                  <span className="flex items-center gap-1">
-                    <MapPin className="h-4 w-4" />
-                    {exp.location}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <Calendar className="h-4 w-4" />
-                    {exp.duration}
-                  </span>
-                </div>
-                <p className="mt-3 text-[var(--sea-ink-soft)] leading-relaxed">
-                  {exp.description}
-                </p>
+            <div className="flex flex-col h-full">
+              <h3 className="text-xl font-semibold text-[var(--sea-ink)] group-hover:text-[var(--lagoon-deep)] transition-colors">
+                {exp.title}
+              </h3>
+              
+              <div className="mt-2 flex flex-wrap gap-3 text-sm text-[var(--sea-ink-soft)]">
+                <span className="flex items-center gap-1">
+                  <MapPin className="h-3.5 w-3.5" />
+                  {exp.location}
+                </span>
+                <span className="flex items-center gap-1">
+                  <Calendar className="h-3.5 w-3.5" />
+                  {exp.duration}
+                </span>
               </div>
-              <div className="ml-4 flex items-center">
-                <div className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--line)] bg-[var(--surface)] text-[var(--sea-ink-soft)] transition-all group-hover:border-[var(--lagoon)] group-hover:bg-[var(--lagoon)]/10 group-hover:text-[var(--lagoon-deep)]">
-                  <ArrowRight className="h-5 w-5" />
-                </div>
+              
+              <p className="mt-3 text-[var(--sea-ink-soft)] leading-relaxed line-clamp-3">
+                {exp.description}
+              </p>
+              
+              <div className="mt-4 flex justify-end">
+                <span className="inline-flex items-center gap-1 text-sm font-medium text-[var(--lagoon-deep)] opacity-0 transition-all group-hover:opacity-100 group-hover:gap-2">
+                  Details <ArrowUpRight className="h-4 w-4" />
+                </span>
               </div>
             </div>
           </Link>
