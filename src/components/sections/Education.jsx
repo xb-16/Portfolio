@@ -1,6 +1,6 @@
-import { SectionLayout } from '../SectionLayout';
-import { MapPin, Calendar, GraduationCap, ArrowUpRight } from 'lucide-react';
-import { Link } from '@tanstack/react-router';
+import { SectionLayout } from '../SectionLayout'
+import { MapPin, Calendar, GraduationCap, ArrowUpRight } from 'lucide-react'
+import { Link } from '@tanstack/react-router'
 
 const educations = [
   {
@@ -46,7 +46,7 @@ const educations = [
     path: '/education/founder-academy',
     gradient: 'from-[var(--lagoon)]/10 to-[var(--lagoon-deep)]/10',
   },
-];
+]
 
 export function Education() {
   return (
@@ -60,7 +60,8 @@ export function Education() {
             {edu.path ? (
               <Link
                 to={edu.path}
-                className={`relative flex flex-col gap-4 md:flex-row ${
+                // add left padding on small screens so items clear the timeline
+                className={`relative flex flex-col gap-4 pl-10 md:pl-0 md:flex-row ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
@@ -82,7 +83,9 @@ export function Education() {
                         <h3 className="text-xl font-bold text-[var(--sea-ink)] group-hover:text-[var(--lagoon-deep)] transition-colors">
                           {edu.title}
                         </h3>
-                        <p className="text-sm text-[var(--sea-ink-soft)]">{edu.institution}</p>
+                        <p className="text-sm text-[var(--sea-ink-soft)]">
+                          {edu.institution}
+                        </p>
                       </div>
                     </div>
                     <div className="mt-3 flex items-center gap-2 text-sm text-[var(--sea-ink-soft)]">
@@ -104,7 +107,8 @@ export function Education() {
               </Link>
             ) : (
               <div
-                className={`relative flex flex-col gap-4 md:flex-row ${
+                // add left padding on small screens so items clear the timeline
+                className={`relative flex flex-col gap-4 pl-10 md:pl-0 md:flex-row ${
                   index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
@@ -124,7 +128,9 @@ export function Education() {
                         <h3 className="text-xl font-bold text-[var(--sea-ink)] group-hover:text-[var(--lagoon-deep)] transition-colors">
                           {edu.title}
                         </h3>
-                        <p className="text-sm text-[var(--sea-ink-soft)]">{edu.institution}</p>
+                        <p className="text-sm text-[var(--sea-ink-soft)]">
+                          {edu.institution}
+                        </p>
                       </div>
                     </div>
                     <div className="mt-3 flex items-center gap-2 text-sm text-[var(--sea-ink-soft)]">
@@ -136,7 +142,9 @@ export function Education() {
                         {edu.description}
                       </p>
                     )}
-                    <div className="mt-6 text-sm text-[var(--sea-ink-soft)]">Completed</div>
+                    <div className="mt-6 text-sm text-[var(--sea-ink-soft)]">
+                      Completed
+                    </div>
                   </div>
                 </div>
                 <div className="hidden md:block md:w-1/2" />
@@ -146,5 +154,5 @@ export function Education() {
         ))}
       </div>
     </SectionLayout>
-  );
+  )
 }
