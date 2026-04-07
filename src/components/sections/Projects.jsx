@@ -119,7 +119,7 @@ export const projects = [
 
 export function Projects() {
   return (
-    <SectionLayout title="Side Projects" reverse>
+    <SectionLayout title="Side Projects" reverse >
       <div className="grid gap-6 md:grid-cols-2">
         {projects.map((project) => (
           <Link

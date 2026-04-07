@@ -1,5 +1,5 @@
-import { Cube } from './Cube';
-import { cn } from '../lib/utils';
+import { Cube } from './Cube'
+import { cn } from '../lib/utils'
 
 export function SectionLayout({
   title,
@@ -30,7 +30,7 @@ export function SectionLayout({
           }}
         />
       </section>
-    );
+    )
   }
 
   // Default side-by-side layout
@@ -38,12 +38,14 @@ export function SectionLayout({
     <section className="relative my-20 first:mt-8 last:mb-8">
       <div
         className={cn(
-          'grid gap-8 md:grid-cols-2 md:gap-12 items-center',
-          reverse && 'md:[&>*:first-child]:order-2'
+          'grid gap-8 md:grid-cols-[40%_60%] md:gap-12 items-center',
+          reverse && 'md:[&>*:first-child]:order-2',
         )}
       >
         <div className="space-y-4">
-          <div className="prose prose-lg prose-[var(--sea-ink)]">{children}</div>
+          <div className="prose prose-lg prose-[var(--sea-ink)]">
+            {children}
+          </div>
         </div>
         <div className="flex flex-col place-items-center gap-18 justify-center">
           <h2 className="text-4xl font-bold text-[var(--sea-ink)] md:text-5xl">
@@ -60,5 +62,5 @@ export function SectionLayout({
         }}
       />
     </section>
-  );
+  )
 }
