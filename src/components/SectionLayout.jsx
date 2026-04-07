@@ -39,7 +39,7 @@ export function SectionLayout({
       <div
         className={cn(
           'grid gap-8 md:grid-cols-[40%_60%] md:gap-12 items-center',
-          reverse && 'md:[&>*:first-child]:order-2',
+          reverse && '[&>*:first-child]:order-2',
         )}
       >
         <div className="space-y-4">

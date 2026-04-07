@@ -12,7 +12,7 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <div className="space-y-8 md:space-y-16">
+    <div className="space-y-8 px-4 md:space-y-16">
       <Hero />
       <Skills />
       <Education />

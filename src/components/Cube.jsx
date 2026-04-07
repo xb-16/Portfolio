@@ -4,7 +4,7 @@ export function Cube() {
       <img
         src="/cube.gif"
         alt="cube animation"
-        className="w-48 h-48 md:w-64 md:h-64 object-cover"
+        className="w-36 h-36 md:w-64 md:h-64 object-cover"
       />
     </div>
   );

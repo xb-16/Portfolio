@@ -150,9 +150,9 @@ const platforms = [
     url: 'https://www.upwork.com/freelancers/~01example', // Replace with your actual Upwork profile URL
     icon: <Briefcase className="h-6 w-6 text-[var(--lagoon)]" />,
     staticData: {
-      jobs: 12,
-      earnings: '$5K+',
-      joined: '2023',
+      jobs: 0,
+      earnings: '0$',
+      joined: '2024',
     },
   },
 ]
@@ -188,7 +188,7 @@ function PlatformCard({ platform, data, loading, error }) {
         ) : error ? (
           <p className="mt-4 text-sm text-red-500">Failed to load data</p>
         ) : (
-          <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2">
+          <div className="mt-4 grid md:grid-cols-2 gap-x-4 gap-y-2">
             {Object.entries(data).map(([key, value]) => (
               <div
                 key={key}

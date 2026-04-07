@@ -14,6 +14,7 @@ import { Route as WorksInternshipsSaharianoRouteImport } from './routes/works-in
 import { Route as WorksInternshipsMetamaRouteImport } from './routes/works-internships/metama'
 import { Route as WorksInternshipsDigiluxRouteImport } from './routes/works-internships/digilux'
 import { Route as ProjectsProjectIdRouteImport } from './routes/projects.$projectId'
+import { Route as EducationFounderAcademyRouteImport } from './routes/education/founder-academy'
 import { Route as EducationBtsDsiRouteImport } from './routes/education/bts-dsi'
 import { Route as EducationBachelorSirRouteImport } from './routes/education/bachelor-sir'
 
@@ -43,6 +44,11 @@ const ProjectsProjectIdRoute = ProjectsProjectIdRouteImport.update({
   path: '/projects/$projectId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EducationFounderAcademyRoute = EducationFounderAcademyRouteImport.update({
+  id: '/education/founder-academy',
+  path: '/education/founder-academy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EducationBtsDsiRoute = EducationBtsDsiRouteImport.update({
   id: '/education/bts-dsi',
   path: '/education/bts-dsi',
@@ -58,6 +64,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/education/bachelor-sir': typeof EducationBachelorSirRoute
   '/education/bts-dsi': typeof EducationBtsDsiRoute
+  '/education/founder-academy': typeof EducationFounderAcademyRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/works-internships/digilux': typeof WorksInternshipsDigiluxRoute
   '/works-internships/metama': typeof WorksInternshipsMetamaRoute
@@ -67,6 +74,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/education/bachelor-sir': typeof EducationBachelorSirRoute
   '/education/bts-dsi': typeof EducationBtsDsiRoute
+  '/education/founder-academy': typeof EducationFounderAcademyRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/works-internships/digilux': typeof WorksInternshipsDigiluxRoute
   '/works-internships/metama': typeof WorksInternshipsMetamaRoute
@@ -77,6 +85,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/education/bachelor-sir': typeof EducationBachelorSirRoute
   '/education/bts-dsi': typeof EducationBtsDsiRoute
+  '/education/founder-academy': typeof EducationFounderAcademyRoute
   '/projects/$projectId': typeof ProjectsProjectIdRoute
   '/works-internships/digilux': typeof WorksInternshipsDigiluxRoute
   '/works-internships/metama': typeof WorksInternshipsMetamaRoute
@@ -88,6 +97,7 @@ export interface FileRouteTypes {
     | '/'
     | '/education/bachelor-sir'
     | '/education/bts-dsi'
+    | '/education/founder-academy'
     | '/projects/$projectId'
     | '/works-internships/digilux'
     | '/works-internships/metama'
@@ -97,6 +107,7 @@ export interface FileRouteTypes {
     | '/'
     | '/education/bachelor-sir'
     | '/education/bts-dsi'
+    | '/education/founder-academy'
     | '/projects/$projectId'
     | '/works-internships/digilux'
     | '/works-internships/metama'
@@ -106,6 +117,7 @@ export interface FileRouteTypes {
     | '/'
     | '/education/bachelor-sir'
     | '/education/bts-dsi'
+    | '/education/founder-academy'
     | '/projects/$projectId'
     | '/works-internships/digilux'
     | '/works-internships/metama'
@@ -116,6 +128,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   EducationBachelorSirRoute: typeof EducationBachelorSirRoute
   EducationBtsDsiRoute: typeof EducationBtsDsiRoute
+  EducationFounderAcademyRoute: typeof EducationFounderAcademyRoute
   ProjectsProjectIdRoute: typeof ProjectsProjectIdRoute
   WorksInternshipsDigiluxRoute: typeof WorksInternshipsDigiluxRoute
   WorksInternshipsMetamaRoute: typeof WorksInternshipsMetamaRoute
@@ -159,6 +172,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsProjectIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/education/founder-academy': {
+      id: '/education/founder-academy'
+      path: '/education/founder-academy'
+      fullPath: '/education/founder-academy'
+      preLoaderRoute: typeof EducationFounderAcademyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/education/bts-dsi': {
       id: '/education/bts-dsi'
       path: '/education/bts-dsi'
@@ -180,6 +200,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   EducationBachelorSirRoute: EducationBachelorSirRoute,
   EducationBtsDsiRoute: EducationBtsDsiRoute,
+  EducationFounderAcademyRoute: EducationFounderAcademyRoute,
   ProjectsProjectIdRoute: ProjectsProjectIdRoute,
   WorksInternshipsDigiluxRoute: WorksInternshipsDigiluxRoute,
   WorksInternshipsMetamaRoute: WorksInternshipsMetamaRoute,
@@ -188,12 +209,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { createStart } from '@tanstack/react-start'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-  }
-}
